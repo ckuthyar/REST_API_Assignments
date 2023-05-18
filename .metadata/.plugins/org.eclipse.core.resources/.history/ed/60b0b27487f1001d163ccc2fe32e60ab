@@ -1,0 +1,24 @@
+package com.sangamone.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
+import java.util.List;
+
+import com.sangamone.demo.model.Shop;
+import com.sangamone.demo.repo.ShopRepo;
+
+@RestController
+public class ShopController {
+	@Autowired
+	ShopRepo shopRepo;
+	@GetMapping("/showTransactions")
+	public Shop showTransactions() {
+
+		Shop sh = new Shop();
+		sh = (Shop) shopRepo.findAll();
+		return sh;
+	}
+
+}

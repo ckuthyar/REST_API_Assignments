@@ -1,0 +1,20 @@
+package com.sangamone.demo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
+import com.sangamone.demo.model.Shop;
+
+@RestController
+public class ShopController {
+	@GetMapping("/showTransactions")
+	public Shop showTransactions() {
+		Date today = new Date();
+		Shop shop = new Shop();
+		shop.setShopId(1);
+		shop.setShopName("Asha Stationery");
+		shop.setAmount(500);
+		return shop;
+	}
+
+}

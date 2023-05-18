@@ -1,0 +1,16 @@
+package com.sangamone.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+
+public class TestController {
+	@GetMapping("/display")
+	@ResponseBody
+	public String display() {
+		return "Thank you Java Buddy";
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\3-SangamOne\2023\Coding\Java\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1135882538.index
+1043426546.index
+3203050098.index
+368463596.index
+2944601512.index
+2093217692.index
