@@ -31,15 +31,17 @@ public class TimingsController {
 		return "Success";
 	}
 	@GetMapping("/getTrainsByStationId")
-	
-	
 	public Map<String, Integer> getTrainsByStationId(@RequestParam int station_id){
-		
 		Integer trainlist1 = timingsRepository.findTrainsById(station_id);
 		Map<String, Integer> response = new HashMap<>();
 		response.put("trainId", trainlist1);
 		return response;
 		
+	}
+	@GetMapping("/getTrainNameByStationId")
+	public String getTrainNameByStationId(@RequestParam int station_id) {
+		String trainlist2 = timingsRepository.findTrainNameByStationId(station_id);
+		return trainlist2;
 	}
 
 }
