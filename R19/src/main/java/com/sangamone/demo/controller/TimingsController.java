@@ -43,5 +43,11 @@ public class TimingsController {
 		String trainlist2 = timingsRepository.findTrainNameByStationId(station_id);
 		return trainlist2;
 	}
+	
+	@GetMapping("/getTrainNameByStationCode")
+	public String getTrainNameByStationName(@RequestParam String station_code) {
+		String trainlist3=timingsRepository.findTrainNameByStationCode(station_code);
+		return trainlist3;
+	}
 
 }
