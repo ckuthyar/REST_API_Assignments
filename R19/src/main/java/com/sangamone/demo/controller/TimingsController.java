@@ -1,5 +1,7 @@
 package com.sangamone.demo.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.sangamone.demo.model.Timings;
+import java.util.HashMap;
 import com.sangamone.demo.repo.TimingsRepository;
 
 @RestController
@@ -28,9 +31,14 @@ public class TimingsController {
 		return "Success";
 	}
 	@GetMapping("/getTrainsByStationId")
-	public Iterable<Timings> getTrainsByStationId(@RequestParam int station_id){
-		Iterable<Timings> trainlist1 = timingsRepository.findTrainsById(station_id);
-		return trainlist1;
+	
+	
+	public Map<String, Integer> getTrainsByStationId(@RequestParam int station_id){
+		
+		Integer trainlist1 = timingsRepository.findTrainsById(station_id);
+		Map<String, Integer> response = new HashMap<>();
+		response.put("trainId", trainlist1);
+		return response;
 		
 	}
 
