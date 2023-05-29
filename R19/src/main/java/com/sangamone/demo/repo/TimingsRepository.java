@@ -14,5 +14,8 @@ public interface TimingsRepository extends CrudRepository<Timings, Integer> {
 	
 	@Query(value="select train_name, station_code, arrival_time, departure_time from timings inner join trains on timings.train_id=trains.train_id inner join stations on timings.station_id=stations.station_id where station_code=?", nativeQuery=true)
 	String findTrainNameByStationCode(String station_code);
+	
+	@Query(value="select train_name, station_code, arrival_time, departure_time from timings inner join trains on timings.train_id=trains.train_id inner join stations on timings.station_id=stations.station_id where station_name=?", nativeQuery=true)
+	String findTrainNameByStationName(String station_name);
 
 }

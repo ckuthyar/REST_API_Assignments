@@ -45,9 +45,14 @@ public class TimingsController {
 	}
 	
 	@GetMapping("/getTrainNameByStationCode")
-	public String getTrainNameByStationName(@RequestParam String station_code) {
+	public String getTrainNameByStationCode(@RequestParam String station_code) {
 		String trainlist3=timingsRepository.findTrainNameByStationCode(station_code);
 		return trainlist3;
+	}
+	@GetMapping("/getTrainNameByStationName")
+	public String getTrainNameByStationName(@RequestParam String station_name) {
+		String trainlist4=timingsRepository.findTrainNameByStationName(station_name);
+		return trainlist4;
 	}
 
 }
